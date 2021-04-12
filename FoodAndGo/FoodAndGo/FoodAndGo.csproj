@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FoodAndGo.Data\FoodAndGo.Data.csproj" />
+    <ProjectReference Include="..\FoodAndGo.Repositories\FoodAndGo.Repositories.csproj" />
+    <ProjectReference Include="..\FoodAndGo.Services\FoodAndGo.Services.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,33 @@
+﻿@model IQueryable<FoodAndGo.Data.Category>
+@{
+    ViewData["Title"] = "Index";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h3>Category List</h3><br />
+
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>CATEGORY</th>
+            <th>CATEGORY DESC</th>
+            <th>DELETE</th>
+            <th>UPDATE</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.CategoryName</td>
+                <td>@item.CategoryDescp</td>
+                <td><a href="#" class="btn btn-danger">Delete</a>
+                <td><a href="#" class="btn btn-success">Update</a>
+            </tr>
+        }
+    </table>
+    <a href="#" class="btn btn-primary">New Category</a>
+</body>
+</html>

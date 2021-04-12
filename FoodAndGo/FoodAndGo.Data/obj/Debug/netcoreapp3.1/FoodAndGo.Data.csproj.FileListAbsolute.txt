@@ -1,0 +1,12 @@
+C:\Users\yunus\source\repos\FoodAndGo\FoodAndGo.Data\bin\Debug\netcoreapp3.1\FoodAndGo.Data.deps.json
+C:\Users\yunus\source\repos\FoodAndGo\FoodAndGo.Data\bin\Debug\netcoreapp3.1\FoodAndGo.Data.runtimeconfig.json
+C:\Users\yunus\source\repos\FoodAndGo\FoodAndGo.Data\bin\Debug\netcoreapp3.1\FoodAndGo.Data.runtimeconfig.dev.json
+C:\Users\yunus\source\repos\FoodAndGo\FoodAndGo.Data\bin\Debug\netcoreapp3.1\FoodAndGo.Data.dll
+C:\Users\yunus\source\repos\FoodAndGo\FoodAndGo.Data\bin\Debug\netcoreapp3.1\FoodAndGo.Data.pdb
+C:\Users\yunus\source\repos\FoodAndGo\FoodAndGo.Data\obj\Debug\netcoreapp3.1\FoodAndGo.Data.csprojAssemblyReference.cache
+C:\Users\yunus\source\repos\FoodAndGo\FoodAndGo.Data\obj\Debug\netcoreapp3.1\FoodAndGo.Data.AssemblyInfoInputs.cache
+C:\Users\yunus\source\repos\FoodAndGo\FoodAndGo.Data\obj\Debug\netcoreapp3.1\FoodAndGo.Data.AssemblyInfo.cs
+C:\Users\yunus\source\repos\FoodAndGo\FoodAndGo.Data\obj\Debug\netcoreapp3.1\FoodAndGo.Data.csproj.CoreCompileInputs.cache
+C:\Users\yunus\source\repos\FoodAndGo\FoodAndGo.Data\obj\Debug\netcoreapp3.1\FoodAndGo.Data.dll
+C:\Users\yunus\source\repos\FoodAndGo\FoodAndGo.Data\obj\Debug\netcoreapp3.1\FoodAndGo.Data.pdb
+C:\Users\yunus\source\repos\FoodAndGo\FoodAndGo.Data\obj\Debug\netcoreapp3.1\FoodAndGo.Data.genruntimeconfig.cache
