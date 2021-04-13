@@ -1,0 +1,48 @@
+﻿
+@model FoodAndGo.Data.ViewModels.ViewModelFoodAdd
+@{
+    ViewData["Title"] = "FoodAdd";
+
+
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>FoodAdd</h1>
+
+    <form action="FoodAdd" controller="Food" method="post" novalidate>
+
+        <label>CategoryName </label>
+        <input class="form-control" asp-for="FoodName" type="text" placeholder="Category Name" required />
+        <span asp-validation-for="FoodName" style="color:red"> </span><br />
+
+        <label asp-for="Category"></label>
+        <select  class="form-control" asp-for="Category" asp-items="new SelectList(ViewBag.Category)" ></select>
+        <span asp-validation-for="Category"></span>
+
+        @*<label>Category </label>
+        <input class="form-control" asp-for="Category" type="text"placeholder="Category" required /><br />*@
+
+
+        <label>Price </label>
+        <input class="form-control" asp-for="Price" type="text" placeholder="Price" required />
+        <span asp-validation-for="Price" style="color:red"></span><br />
+
+        <label>Stock </label>
+        <input class="form-control" asp-for="Stock" type="text" placeholder="Stock" required />
+        <span asp-validation-for="Stock" style="color:red"></span><br />
+
+        <label>FoodDesc </label>
+        <input class="form-control" asp-for="FoodDescp" type="text" placeholder="Food Despriction" /><br />
+
+        <label>Image Url </label>
+        <input class="form-control" asp-for="ImageUrl" type="text" placeholder="Image Url" /><br />
+
+        <button class="btn btn-info">Save</button>
+
+    </form>
+</body>
+</html>

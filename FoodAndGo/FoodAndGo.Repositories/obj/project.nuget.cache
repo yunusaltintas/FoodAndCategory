@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "HZfL4e9n5vAwGTexyoKSvz19wYm194WaAyThj6YvpvnORTeYMGdkuAM8EaPlu3jBfgQHWFht1k2kiggxs8RONQ==",
+  "dgSpecHash": "JQ7I2ICqTEIqeZwgv4VQan+/LUXtGRb/fkH4i2LmdgiB36Cg9+POtpXO/UHptUDH2fZZ+Wp89697s5IYmH8ZIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\yunus\\source\\repos\\GİT\\FoodAndCategory\\FoodAndGo\\FoodAndGo.Repositories\\FoodAndGo.Repositories.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\yunus\\.nuget\\packages\\fluentvalidation\\10.0.2\\fluentvalidation.10.0.2.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.0.2\\fluentvalidation.aspnetcore.10.0.2.nupkg.sha512",
+    "C:\\Users\\yunus\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.0.2\\fluentvalidation.dependencyinjectionextensions.10.0.2.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\yunus\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

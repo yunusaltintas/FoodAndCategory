@@ -14,7 +14,7 @@
             <th>ID</th>
             <th>CATEGORY</th>
             <th>CATEGORY DESC</th>
-            <th>DELETE</th>
+            <th>STATUS</th>
             <th>UPDATE</th>
         </tr>
         @foreach (var item in Model)
@@ -23,11 +23,13 @@
                 <td>@item.Id</td>
                 <td>@item.CategoryName</td>
                 <td>@item.CategoryDescp</td>
-                <td><a href="#" class="btn btn-danger">Delete</a>
-                <td><a href="#" class="btn btn-success">Update</a>
+                <td>@item.IsPublish</td>   
+                <td><a href="/Category/CategoryGet/@item.Id" class="btn btn-warning">Update</a>
+
+
             </tr>
         }
     </table>
-    <a href="#" class="btn btn-primary">New Category</a>
+    <a href="~/Category/CategoryAdd" class="btn btn-primary">New Category</a>
 </body>
 </html>

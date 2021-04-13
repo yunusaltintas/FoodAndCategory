@@ -1,0 +1,29 @@
+﻿@model FoodAndGo.Data.ViewModels.ViewModelCategoryAdd
+@{
+    ViewData["Title"] = "CatergoryAdd";
+   
+
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>CatergoryAdd</h1>
+
+    
+    <form action="CategoryAdd" controller="Category" method="post" novalidate>
+
+        <label>CategoryName </label>
+        <input class="form-control" asp-for="CategoryName" type="text" placeholder="Category Name" required />
+        <span asp-validation-for="CategoryName" style="color:red"> </span><br />
+
+        <label>CategoryDesc </label>
+        <input class="form-control" asp-for="CategoryDesc" type="text" placeholder="Category Despriction" required /><br />
+        
+
+        <button class="btn btn-info">Save</button>
+    </form>
+</body>
+</html>

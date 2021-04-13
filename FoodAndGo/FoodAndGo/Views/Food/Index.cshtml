@@ -16,6 +16,8 @@
             <th>CATEGORY NAME</th>
             <th>PRİCE</th>
             <th>STOCK</th>
+            <th>DESC</th>
+            <th>IMAGE URL</th>
             <th>DELETE</th>
             <th>UPDATE</th>
             <th>DETAİLS</th>
@@ -25,16 +27,18 @@
             <tr>
                 <td>@item.Id</td>
                 <td>@item.FoodName</td>
-                <td>a</td>
+                <td>@item.Category.CategoryName</td>
                 <td>@item.Price</td>
                 <td>@item.Stock</td>
-                <td><a href="#" class="btn btn-danger">Delete</a>
+                <td>@item.FoodDescp</td>
+                <td>@item.ImageUrl</td>
+                <td><a href="/Food/FoodDelete/@item.Id" class="btn btn-danger">Delete</a>
                 <td><a href="#" class="btn btn-success">Update</a>
                 <td><a href="#" class="btn btn-info">Details</a>
 
             </tr>
         }
     </table>
-    <a href="#" class="btn btn-primary">New Food</a>
+    <a href="~/Food/FoodAdd" class="btn btn-primary">New Food</a>
 </body>
 </html>

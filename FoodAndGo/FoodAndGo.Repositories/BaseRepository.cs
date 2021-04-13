@@ -51,7 +51,12 @@ namespace FoodAndGo.Repositories
             return _db.AsNoTracking();
         }
 
-       
+        public IQueryable<T> TQuery()
+        {
+            return _db.AsQueryable();
+        }
+
+
         public async Task<T> TGetById(int id)
         {
            return await _db.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id); 
@@ -63,5 +68,7 @@ namespace FoodAndGo.Repositories
             await _context.SaveChangesAsync();
             return true;
         }
+
+        //List<SelectListItem> cat = await _context.Categories.ToList();
     }
 }

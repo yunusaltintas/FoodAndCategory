@@ -27,7 +27,6 @@ namespace FoodAndGo.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CategoryDescp")
-                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
 
@@ -38,6 +37,9 @@ namespace FoodAndGo.Data.Migrations
 
                     b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsPublish")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -58,7 +60,6 @@ namespace FoodAndGo.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FoodDescp")
-                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("varchar(250)");
 

@@ -12,6 +12,7 @@ namespace FoodAndGo.Repositories
     {
         Task<T> TAdd(T Entity);
         IQueryable<T> TGetAll();
+        IQueryable<T> TQuery();
         Task<bool> TDelete(int id);
         Task<bool> TUpdate(T Entity);
         Task<T> TGetById(int id);

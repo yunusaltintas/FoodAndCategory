@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodAndGo", "FoodAndGo\FoodAndGo.csproj", "{13E887B7-8DBB-4B3B-A64C-61A5E8831B75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodAndGo", "FoodAndGo\FoodAndGo.csproj", "{13E887B7-8DBB-4B3B-A64C-61A5E8831B75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodAndGo.Data", "FoodAndGo.Data\FoodAndGo.Data.csproj", "{A1AC3C7A-EF81-4939-81E3-65364467D484}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodAndGo.Data", "FoodAndGo.Data\FoodAndGo.Data.csproj", "{A1AC3C7A-EF81-4939-81E3-65364467D484}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodAndGo.Repositories", "FoodAndGo.Repositories\FoodAndGo.Repositories.csproj", "{BDEE17BA-DC69-4ACE-85A0-5B58D805428B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodAndGo.Repositories", "FoodAndGo.Repositories\FoodAndGo.Repositories.csproj", "{BDEE17BA-DC69-4ACE-85A0-5B58D805428B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodAndGo.Services", "FoodAndGo.Services\FoodAndGo.Services.csproj", "{36F4504D-A7B0-4F1F-BC03-3F44AD9DDAB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodAndGo.Services", "FoodAndGo.Services\FoodAndGo.Services.csproj", "{36F4504D-A7B0-4F1F-BC03-3F44AD9DDAB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

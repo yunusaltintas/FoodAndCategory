@@ -15,13 +15,16 @@ namespace FoodAndGo.Data.EntityTypeBuilder
             builder.Property(p => p.CategoryName)
                 .IsRequired()
                 .HasMaxLength(120)
-                 .HasColumnType("varchar");
+                .HasColumnType("varchar");
 
 
             builder.Property(p => p.CategoryDescp)
-                .IsRequired()
                 .HasMaxLength(250)
-                 .HasColumnType("varchar");
+                .HasColumnType("varchar");
+
+            builder.Property(p => p.IsPublish)
+                .IsRequired()
+                .HasColumnType("bit");
 
 
 
