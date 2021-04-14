@@ -15,16 +15,16 @@
 
     <form action="FoodAdd" controller="Food" method="post" novalidate>
 
-        <label>CategoryName </label>
-        <input class="form-control" asp-for="FoodName" type="text" placeholder="Category Name" required />
+        <label>FoodName </label>
+        <input class="form-control" asp-for="FoodName" type="text" placeholder="Food Name" required />
         <span asp-validation-for="FoodName" style="color:red"> </span><br />
 
         <label asp-for="Category"></label>
-        <select  class="form-control" asp-for="Category" asp-items="new SelectList(ViewBag.Category)" ></select>
-        <span asp-validation-for="Category"></span>
+            <select  class="form-control" asp-for="CategoryId" asp-items="new SelectList(ViewBag.Category)"  ></select>
+            <span asp-validation-for="Category"></span>
 
         @*<label>Category </label>
-        <input class="form-control" asp-for="Category" type="text"placeholder="Category" required /><br />*@
+        <input class="form-control" asp-for="Category" type="text" placeholder="Category" required /><br />*@
 
 
         <label>Price </label>

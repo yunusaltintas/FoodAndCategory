@@ -1,4 +1,4 @@
-﻿@model IQueryable<FoodAndGo.Data.Category>
+﻿@model List<FoodAndGo.Data.Category>
 @{
     ViewData["Title"] = "Index";
 }
@@ -15,6 +15,7 @@
             <th>CATEGORY</th>
             <th>CATEGORY DESC</th>
             <th>STATUS</th>
+            <th>DELETE</th>
             <th>UPDATE</th>
         </tr>
         @foreach (var item in Model)
@@ -23,7 +24,8 @@
                 <td>@item.Id</td>
                 <td>@item.CategoryName</td>
                 <td>@item.CategoryDescp</td>
-                <td>@item.IsPublish</td>   
+                <td>@item.IsPublish</td>
+                <td><a href="/Category/CategoryDelete/@item.Id" class="btn btn-danger">Delete</a>
                 <td><a href="/Category/CategoryGet/@item.Id" class="btn btn-warning">Update</a>
 
 

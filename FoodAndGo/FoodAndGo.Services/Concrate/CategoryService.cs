@@ -23,8 +23,8 @@ namespace FoodAndGo.Services
             var NewCategory = new Category
             {
                 CategoryName = viewModelCategory.CategoryName,
-                CategoryDescp=viewModelCategory.CategoryDesc
-   
+                CategoryDescp = viewModelCategory.CategoryDesc
+
             };
             await _Repository.TAdd(NewCategory);
         }
@@ -34,11 +34,13 @@ namespace FoodAndGo.Services
             return await _Repository.TGetById(id);
         }
 
-        public IQueryable List()
+        public List<Category> List()
         {
-            var result = _Repository.TGetAll();
+            var result = _Repository.TGetAll().ToList();
             return result;
         }
+
+
 
         public async Task CategoryUpdate(ViewModelCategoryAdd viewModelCategory)
         {
@@ -50,6 +52,22 @@ namespace FoodAndGo.Services
             await _Repository.TUpdate(result);
         }
 
+        public async Task<bool> CategoryDelete(int id)
+        {
+            var result = await _Repository.TGetById(id);
+            if (result.IsPublish == true)
+            {
+                result.IsPublish = false;
+            }
+            else if (result.IsPublish == false)
+            {
+                result.IsPublish = true;
+            }
+           await _Repository.TUpdate(result);
+
+
+            return true;
+        }
 
     }
 }

@@ -14,12 +14,13 @@ namespace FoodAndGo.Repositories
     {
         private readonly FoodAndGoContext _context;
         private readonly DbSet<T> _db;
-
+  
         public BaseRepository(FoodAndGoContext foodAndGoContext )
         {
             _context = foodAndGoContext;
             _db = _context.Set<T>();
         }
+      
         public async Task<T> TAdd(T Entity)
         {
             await _db.AddAsync(Entity);
@@ -46,9 +47,9 @@ namespace FoodAndGo.Repositories
             return result;
         }
 
-        public IQueryable<T> TGetAll()
+        public List<T> TGetAll()
         {
-            return _db.AsNoTracking();
+            return _db.ToList();
         }
 
         public IQueryable<T> TQuery()
@@ -59,16 +60,28 @@ namespace FoodAndGo.Repositories
 
         public async Task<T> TGetById(int id)
         {
-           return await _db.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id); 
+           var aa= await _db.FirstOrDefaultAsync(p => p.Id == id);
+            _context.Dispose();
+            return aa;
         }
 
         public async Task<bool> TUpdate(T Entity)
         {
-            _db.Update(Entity);
-            await _context.SaveChangesAsync();
-            return true;
+            try
+            {
+                _db.Update(Entity);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                //
+                throw ex;
+            }
+            
         }
 
-        //List<SelectListItem> cat = await _context.Categories.ToList();
+        
     }
 }

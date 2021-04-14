@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +14,11 @@ using FoodAndGo.Repositories;
 using FoodAndGo.Services;
 using FluentValidation.AspNetCore;
 using FoodAndGo.Data.ViewModels.Validator;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using FoodAndGo.Services.Abstract;
+using FoodAndGo.Services.Concrate;
 
 namespace FoodAndGo
 {
@@ -31,14 +36,28 @@ namespace FoodAndGo
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews().AddFluentValidation(v => v.RegisterValidatorsFromAssemblyContaining<FoodinputValidator>()); 
-            
+            services.AddControllersWithViews().AddFluentValidation(v => v.RegisterValidatorsFromAssemblyContaining<FoodinputValidator>());
+
             services.AddMvc();
-          
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(p =>
+            {
+                p.LoginPath = ("/Login/index");
+                p.Cookie.Name = "haci";
+                p.ExpireTimeSpan = TimeSpan.FromDays(7);    
+            });
+
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+
 
             services.AddDbContext<FoodAndGoContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IFoodService, FoodService>();
         }
@@ -50,11 +69,13 @@ namespace FoodAndGo
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
+           
             app.UseStaticFiles();
-
+            
             app.UseRouting();
-
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

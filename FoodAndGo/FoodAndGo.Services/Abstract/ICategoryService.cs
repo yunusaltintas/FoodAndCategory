@@ -11,11 +11,10 @@ namespace FoodAndGo.Services
     public interface ICategoryService
     {
 
-        IQueryable List();
-
+        List<Category> List();
         Task CategoryAdd(ViewModelCategoryAdd viewModelCategory);
-
         Task<Category> CategoryGet(int id);
         Task CategoryUpdate(ViewModelCategoryAdd viewModelCategory);
+        Task<bool> CategoryDelete(int id);
     } 
 }

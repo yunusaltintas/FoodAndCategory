@@ -1,6 +1,7 @@
 ﻿using FoodAndGo.Data;
 using FoodAndGo.Data.ViewModels;
 using FoodAndGo.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace FoodAndGo.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;
@@ -42,13 +44,6 @@ namespace FoodAndGo.Controllers
             return RedirectToAction("Index");
         }
 
-        //[HttpGet]
-        //public IActionResult CategoryGet()
-        //{
-
-        //    return View();
-        //}
-
         [HttpGet]
         public async Task<IActionResult> CategoryGet(int id)
         {
@@ -69,9 +64,25 @@ namespace FoodAndGo.Controllers
         [HttpPost]
         public async Task<IActionResult> CategoryGet(ViewModelCategoryAdd viewModelCategory)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("CategoryGet", viewModelCategory);
+            }
             await _categoryService.CategoryUpdate(viewModelCategory);
 
             return RedirectToAction("Index");
+        }
+        
+        public async Task<IActionResult> CategoryDelete(int id)
+        {
+            bool a = await _categoryService.CategoryDelete(id);
+            if (a)
+            {
+                return RedirectToAction("Index");
+            }
+            
+
+            return View();
         }
 
 

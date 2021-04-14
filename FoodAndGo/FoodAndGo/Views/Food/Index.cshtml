@@ -1,4 +1,4 @@
-﻿@model IQueryable<FoodAndGo.Data.Food>
+﻿@model List<FoodAndGo.Data.Food>
 @{
     ViewData["Title"] = "Index";
 }
@@ -33,7 +33,7 @@
                 <td>@item.FoodDescp</td>
                 <td>@item.ImageUrl</td>
                 <td><a href="/Food/FoodDelete/@item.Id" class="btn btn-danger">Delete</a>
-                <td><a href="#" class="btn btn-success">Update</a>
+                <td><a href="/Food/FoodGet/@item.Id" class="btn btn-success">Update</a>
                 <td><a href="#" class="btn btn-info">Details</a>
 
             </tr>

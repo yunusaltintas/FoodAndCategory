@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FoodAndGo.Services
 {
-    public class FoodService:IFoodService
+    public class FoodService : IFoodService
     {
         private readonly IBaseRepository<Food> _Repository;
 
@@ -23,12 +23,14 @@ namespace FoodAndGo.Services
         {
             var NewFood = new Food
             {
-                FoodName =viewModelFood.FoodName,
-                FoodDescp=viewModelFood.FoodDescp,
-                Price=viewModelFood.Price,
-                Stock=viewModelFood.Stock,
-                
+                FoodName = viewModelFood.FoodName,
+                FoodDescp = viewModelFood.FoodDescp,
+                Price = viewModelFood.Price,
+                Stock = viewModelFood.Stock,
+                Category = viewModelFood.Category
+
             };
+
             await _Repository.TAdd(NewFood);
         }
 
@@ -37,10 +39,45 @@ namespace FoodAndGo.Services
             await _Repository.TDelete(id);
         }
 
-        public IQueryable List()
+        public List<Food> List()
         {
-            
-            return _Repository.TQuery().Include(x => x.Category);
+
+            return _Repository.TQuery().Include(x => x.Category).ToList();
+        }
+
+        public async Task<ViewModelFoodAdd> FoodGet(int id)
+        {
+            var result = await _Repository.TGetById(id);
+            var fod = new ViewModelFoodAdd
+            {
+                FoodName = result.FoodName,
+                FoodDescp = result.FoodDescp,
+                Price = result.Price,
+                Stock = result.Stock,
+                id = result.Id,
+                ImageUrl = result.ImageUrl
+
+            };
+
+
+            return fod;
+        }
+
+        public async Task FoodUpdate(ViewModelFoodAdd viewModelFoodAdd)
+        {
+            var result = new Food
+            {
+                Id = viewModelFoodAdd.CategoryId,
+                FoodName = viewModelFoodAdd.FoodName,
+                FoodDescp = viewModelFoodAdd.FoodDescp,
+                Price = viewModelFoodAdd.Price,
+                Stock = viewModelFoodAdd.Stock,
+                ImageUrl = viewModelFoodAdd.ImageUrl,
+                CategoryId = viewModelFoodAdd.CategoryId
+            };
+
+            await _Repository.TUpdate(result);
         }
     }
 }
+

@@ -1,4 +1,5 @@
-﻿using FoodAndGo.Data.EntityTypeBuilder;
+﻿using FoodAndGo.Data.Entities;
+using FoodAndGo.Data.EntityTypeBuilder;
 using Microsoft.EntityFrameworkCore;
 
 using System;
@@ -7,22 +8,27 @@ using System.Text;
 
 namespace FoodAndGo.Data
 {
-    public class FoodAndGoContext:DbContext
+    public class FoodAndGoContext : DbContext
     {
-        public FoodAndGoContext(DbContextOptions options ):base(options)
+        public FoodAndGoContext(DbContextOptions options) : base(options)
         {
 
         }
 
+        public FoodAndGoContext()
+        {
+        }
+
         public DbSet<Food> Foods { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Login> Logins { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                
+
             }
 
         }
@@ -30,8 +36,9 @@ namespace FoodAndGo.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+
             modelBuilder.ApplyConfiguration(new FoodEntityTypeBuilder())
+                        .ApplyConfiguration(new LoginEntitytTypeBuilder())
                         .ApplyConfiguration(new CategoryEntityTypebuilder());
 
             base.OnModelCreating(modelBuilder);

@@ -11,12 +11,14 @@ namespace FoodAndGo.Repositories
     public interface IBaseRepository<T> where T:BaseEntity
     {
         Task<T> TAdd(T Entity);
-        IQueryable<T> TGetAll();
+        List<T> TGetAll();
         IQueryable<T> TQuery();
         Task<bool> TDelete(int id);
         Task<bool> TUpdate(T Entity);
         Task<T> TGetById(int id);
         Task<T> TFetchSingleAsync(Expression<Func<T,bool>> predicate);
+        
+
 
 
 

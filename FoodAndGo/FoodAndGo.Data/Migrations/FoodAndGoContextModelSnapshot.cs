@@ -46,6 +46,41 @@ namespace FoodAndGo.Data.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("FoodAndGo.Data.Entities.Login", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("varchar(120)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(350)
+                        .HasColumnType("varchar(350)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(1)
+                        .HasColumnType("varchar(1)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("varchar(120)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Logins");
+                });
+
             modelBuilder.Entity("FoodAndGo.Data.Food", b =>
                 {
                     b.Property<int>("Id")
