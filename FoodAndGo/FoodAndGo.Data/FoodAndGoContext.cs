@@ -10,28 +10,18 @@ namespace FoodAndGo.Data
 {
     public class FoodAndGoContext : DbContext
     {
+     
+        public DbSet<Food> Foods { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Login> Logins { get; set; }
+
         public FoodAndGoContext(DbContextOptions options) : base(options)
         {
 
         }
 
-        public FoodAndGoContext()
-        {
-        }
-
-        public DbSet<Food> Foods { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Login> Logins { get; set; }
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-
-            }
-
-        }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

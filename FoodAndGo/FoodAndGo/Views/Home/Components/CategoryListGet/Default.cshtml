@@ -1,0 +1,18 @@
+﻿@model List<FoodAndGo.Data.Category>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+        <ul class="nav navbar-nav nav_1">
+            @foreach (var item in Model)
+            {
+                <li><a href="/Home/CategoryDetail/@item.Id">@item.CategoryName</a></li>
+            }
+            
+
+        </ul>
+    </div>
+</body>
+</html>

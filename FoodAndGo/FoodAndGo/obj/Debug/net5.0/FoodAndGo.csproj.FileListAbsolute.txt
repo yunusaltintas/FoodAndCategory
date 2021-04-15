@@ -233,3 +233,9 @@ C:\Users\yunus\source\repos\GİT\FoodAndCategory\FoodAndGo\FoodAndGo\obj\Debug\n
 C:\Users\yunus\source\repos\GİT\FoodAndCategory\FoodAndGo\FoodAndGo\obj\Debug\net5.0\FoodAndGo.genruntimeconfig.cache
 C:\Users\yunus\source\repos\GİT\FoodAndCategory\FoodAndGo\FoodAndGo\obj\Debug\net5.0\Razor\Views\Food\FoodGet.cshtml.g.cs
 C:\Users\yunus\source\repos\GİT\FoodAndCategory\FoodAndGo\FoodAndGo\obj\Debug\net5.0\Razor\Views\Login\Index.cshtml.g.cs
+C:\Users\yunus\source\repos\GİT\FoodAndCategory\FoodAndGo\FoodAndGo\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\yunus\source\repos\GİT\FoodAndCategory\FoodAndGo\FoodAndGo\obj\Debug\net5.0\Razor\Views\Shared\_VtLayout.cshtml.g.cs
+C:\Users\yunus\source\repos\GİT\FoodAndCategory\FoodAndGo\FoodAndGo\obj\Debug\net5.0\Razor\Views\Home\Components\CategoryListGet\Default.cshtml.g.cs
+C:\Users\yunus\source\repos\GİT\FoodAndCategory\FoodAndGo\FoodAndGo\obj\Debug\net5.0\Razor\Views\Home\Components\FoodListGet\Default.cshtml.g.cs
+C:\Users\yunus\source\repos\GİT\FoodAndCategory\FoodAndGo\FoodAndGo\obj\Debug\net5.0\Razor\Views\Home\CategoryDetail.cshtml.g.cs
+C:\Users\yunus\source\repos\GİT\FoodAndCategory\FoodAndGo\FoodAndGo\obj\Debug\net5.0\Razor\Views\Home\Components\FoodListByCategory\Default.cshtml.g.cs

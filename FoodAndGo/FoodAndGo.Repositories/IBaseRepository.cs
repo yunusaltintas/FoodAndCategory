@@ -17,7 +17,9 @@ namespace FoodAndGo.Repositories
         Task<bool> TUpdate(T Entity);
         Task<T> TGetById(int id);
         Task<T> TFetchSingleAsync(Expression<Func<T,bool>> predicate);
-        
+        List<T> Listt(Expression<Func<T, bool>> predicate);
+
+
 
 
 

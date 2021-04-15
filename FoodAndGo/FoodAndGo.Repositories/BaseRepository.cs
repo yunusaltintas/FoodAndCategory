@@ -47,6 +47,11 @@ namespace FoodAndGo.Repositories
             return result;
         }
 
+        public List<T> Listt(Expression<Func<T, bool>> predicate)
+        {
+            return _db.Where(predicate).ToList();
+        }
+
         public List<T> TGetAll()
         {
             return _db.ToList();
@@ -61,8 +66,7 @@ namespace FoodAndGo.Repositories
         public async Task<T> TGetById(int id)
         {
            var aa= await _db.FirstOrDefaultAsync(p => p.Id == id);
-            _context.Dispose();
-            return aa;
+           return aa;
         }
 
         public async Task<bool> TUpdate(T Entity)
